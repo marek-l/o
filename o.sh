@@ -24,6 +24,9 @@ get_url() {
 		if [[ $domain == *"stash"* ]]; then
 			url=${url/http:\/\/*@stash/http:\/\/stash}
 		fi
+		
+		#Remove 2211 port from url
+		url=${url/:2211}
 
 		# Add branch path if not master
 		branch=$(get_branch)
